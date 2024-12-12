@@ -1,0 +1,93 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+ENV/
+.virtualenv/
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS file attributes
+._*
+
+# Python-specific files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pym
+*.pkl
+*.sqlite3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Temporary files and backups
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.~*
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+.coverage.*
+
+# Testing
+.tox/
+.nox/
+*.test
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# MyPy type checking reports
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# Caches and logs
+*.log
+*.cache
+.cache/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDEs and editors
+.idea/
+.vscode/
+*.code-workspace
+
+# PyCharm
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Local configuration files
+*.env
+*.env.*.local
+*.ini
+*.toml
+
+# macOS trash
+.Trashes
+
+# Other macOS metadata
+.Spotlight-V100
+.fseventsd
