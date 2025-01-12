@@ -1,0 +1,1 @@
+Practice the topics from book [Learn AI-Assisted Python Programming, Second Edition](<../../Learn%20AI-Assisted%20Python%20Programming,%20Second%20Edition%20(Leo%20Porter,%20Daniel%20Zingaro).pdf>) covered so far.
