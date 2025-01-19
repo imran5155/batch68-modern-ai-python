@@ -1,0 +1,209 @@
+# Functions in Python
+We've used functions many times, like `print()` and `input()`, to make tasks simpler. We've also worked with methods, which are special kinds of functions. Now, it's time to write our own functions, starting with simple ones and progressing to more complex examples.
+
+## Why we need functions
+Often, we'll find the same code repeating in our program with minor changes. Copying and pasting might seem convenient, but if an error occurs, fixing it everywhere can be tedious and risky. This is where functions come in. When a piece of code is repeated in multiple places, consider turning it into a function to streamline our code.
+
+As programs grow, they can become difficult to manage. While comments help, too many make the code harder to follow. A well-written function should be concise and easily understood at a glance. Skilled developers break problems into small, isolated tasks, each handled by its own function, keeping the code clean and organized.
+
+## Types of Functions
+1. Built-in Functions:
+    - We have already used python builtin functions e.g. `print()`, `input()`, `int()`, `float()`.
+2. User defined Functions
+    - User-defined functions are those functions which are defined by the user, for the user. 
+
+## When to create a function
+1. When a particular fragment of the code begins to appear in more than one place, consider the possibility of isolating it in the form of a function invoked.
+2. When a piece of code becomes so large that reading and understating it may cause a problem, consider dividing it into separate, smaller
+problems, and implement each of them in the form of a separate function.
+3. Decompose the problem to allow the product to be implemented as a set of separately written functions packed together in different modules.
+
+**Example**
+```python
+a : int = int(input("Enter a value"))
+print(a)
+
+b : int = int(input("Enter a value"))
+print(b)
+
+c : int = int(input("Enter a value"))
+print(c)
+
+```
+We have written above example to get a number from user and print that number. We are doing this 3 times. 
+This code is absolutely fine and will work. But what if our client/teacher asks as to print the number in this form. "User gave the number <number>".
+So we have to change the print statement on multiple lines. 
+
+In above example, we are repeating our code. We can use function here like so. 
+```python
+def print_number():
+    a : int = int(input("Enter a value"))
+    print(a)
+```
+Now see, we have to change the print on just a single line. Let's chage it as per client/teacher requirement.
+```python
+def print_number():
+    a : int = int(input("Enter a value"))
+    print(f"User gave the number {a}")
+```
+
+## How to create and use the function
+For functions, we have to first define a function, then invoke (use) the function wherever it is required. 
+
+**Step-1: Define (Create) a function**
+Here is the syntax to create a function.
+- We start from keyword `def`.
+- Then we add function name. `def function_name`. The naming conventions for naming the functions is same as naming the variable in python.
+- Then we add paranthesis `def function_name()`.
+- And finally, we add colon `def function_name():`
+- After the colon, comes our function body. Function body contains the code/logic of the task function in bening written for. 
+
+Now our funciton has been defined. We can use it wherever we require.
+
+**Step-2: Invoke (Use) a function**
+We can use our function like so 
+```python
+function_name()
+```
+---
+
+# Function Parameters
+In this section, we'll learn about parameterless and parameterized functions. 
+
+## What are function parameters?
+So far we learnt that functions perform a specific task. To perform the task, in some cases, function needs some inputs/data and in other cases, it doesn't.
+- Parameters simply can be said the inputs/data required by the function to perform a specific task. 
+- The inputs/data is provided from outside the function but we have to mention them while defining the functions. 
+- Parameters only exist inside the function.
+- parameters are provided in paranthesis of the function. 
+
+Let's have a look at parameterless and parameterized function.
+
+## Parameterless Fucntions:
+These type of functions don't require parameters.
+
+```python
+def greetings():
+    print("Hello Rehan!")
+
+greetings() #Output: Hello Rehan!
+```
+
+## Parameterized Fucntions:
+These type of functions require parameters.
+
+```python
+my_name : str = "Rehan"
+def greetings(name):
+    print(f"Hello {name}!")
+
+greetings(my_name) #Output: Hello Rehan!
+```
+- `name` here, is the parameter provided to the function. 
+- Now our function has become more dynamic. We can provide any name, it will greet that person.
+- `my_name` is the argument provided at the time of function invokation.
+
+## What are Arguments?
+Arguments are the actual values you pass to a function when you call it. These values get assigned to the function’s parameters.
+
+```python
+greetings("Rehan") 
+```
+`Rehan` is the argument provided to the function. 
+- Arguments live outside the function.
+- Arguments can be accessed inside the function. 
+**Parameters**
+- Parameters are defined in function at the time of function definition.
+- Parameters only live inside function. They don't have outside scope.
+
+We'll discuss it in details in `Scope` section.
+
+---
+
+# Function Return
+## 1. Reutrn with expression
+So far we only discussed the functions which perform specific task but do not provide results. Now we'll discuss the functions which do provide a result and we get this result through `return` keyword. 
+
+Let's look at example of a function which takes 2 parameters (numbers), add them (perform a task) and return the result. 
+
+```python
+# Define a function
+def addition(first_number:int, second_number:int)->int:
+    result : int = first_number + second_number
+    return result
+
+
+print(addition(5, 8)) # Output: 13
+# Can also do like this
+get_sum : int = addition(5,8)
+print(get_sum) #Output: 13
+
+```
+If we take example of python builin functions, `print()` function doesn't return anything while `int()` returns and integer value. 
+
+Here we are using return with expression. `return result` here 'result' is the expression.
+
+## 2. Reutrn without expression
+Sometimes, we use `return` keyword without expression. What will function return in that case. Well, function will then return `None` 
+
+**Usecase**
+In above example, we were just getting the sum of 2 numbers. Let's add a scenarion. We want our function to add the value only when both of the numbers are non zero. Let's implement it inside the function.
+
+```python
+# Define a function
+def addition_non_zero(first_number:int, second_number:int)->int | None:
+    if first_number > 0 and second_number > 0:
+        result : int = first_number + second_number
+        return result
+
+
+get_sum : int | None = addition_non_zero(5,8)
+print(get_sum) # Output: 13
+
+get_sum : int | None = addition_non_zero(0,8)
+print(get_sum) # Output: None
+
+```
+
+## 3. Return Multiple values
+Remember, function will always return a single value. So how can we return if we need multiple values. We use tuple in that case. Function still returns a single value (a tuple), but we already know that we can unpack the tuple. 
+
+**Example**
+```python
+def mul_and_add(a:int, b:int)-> tuple[int, int]:
+    multiplication : int = a * b
+    addition : int = a + b
+    return multiplication, addition
+
+result = mul_and_add(5, 4)
+print(result)  # Output: (20, 9)
+
+# We can unpack it like so
+mul_result, add_result = mul_and_add(5, 4)
+print(f"Multiplication result:{mul_result}")
+print(f"Addition result:{add_result}")
+```
+
+## 4. Return a list
+
+```python
+def generate_even_numbers(limit):
+    even_numbers = [i for i in range(limit) if i % 2 == 0]
+    return even_numbers
+
+result = generate_even_numbers(10)
+print(result)  # Output: [0, 2, 4, 6, 8]
+```
+
+## 5. Return a dictionary
+```python
+def get_student_info(name, age, course):
+    return {
+        "name": name,
+        "age": age,
+        "course": course
+    }
+
+student_info = get_student_info("John", 21, "Mathematics")
+print(student_info)  # Output: {'name': 'John', 'age': 21, 'course': 'Mathematics'}
+```
