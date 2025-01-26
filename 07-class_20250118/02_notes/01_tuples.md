@@ -1,7 +1,7 @@
 # Introduction to Tuples in Python
 A sequence is a type of data in python which is able to store more than one value. These values can be sequentially browsed i.e. element by element. 
 
-So far, we've only studied one type of sequence i.e. `list`. Here we'll explore another type of sequene called `tuple`. 
+There are several other sequences in python i.e. `list`, `dictionary`, `string`, `set` etc. Here we'll explore another type of sequene called `tuple`. 
 
 We've already discussed the concept of **Immutability** and **Mutability**. Let's revise it. 
 
